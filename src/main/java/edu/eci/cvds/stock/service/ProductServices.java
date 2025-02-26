@@ -10,9 +10,13 @@ import java.util.List;
 
 @Service
 public class ProductServices {
-    private List<Product> products;
     @Autowired
     private List<Agent> agents;
+    private List<Product> products;
+
+    public ProductServices(){
+        this.products = new ArrayList<>();
+    }
 
     public void updateProductQuantity(String productName, int productQuantity){
         for (Product product : products){
